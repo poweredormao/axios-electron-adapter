@@ -10,12 +10,14 @@ import * as settle from 'axios/lib/core/settle';
  * @param config AxiosRequestConfig
  * @returns {Promise} the promise
  */
-module.exports = function ElectronAdapter(config) {
+export default function (config) {
     const processFunc = (resolve, reject) => {
+        const baseUrl = config.baseURL? config.baseURL : '';
         const FullUrl =
-            (config.baseURL? config.baseURL : '') +
-            (config.baseURL?.endsWith('/') ? '' : '/') +
+            baseUrl +
+            (baseUrl.endsWith('/')? '' : '/') +
             (config.url? config.url : '');
+
         const clientReq = remote.net.request({
             method: config.method,
             url: FullUrl
