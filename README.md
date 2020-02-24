@@ -11,7 +11,7 @@ Using XHR in Electron production mode will be blocked by CORS
 
 # Usage
 ~~~ javascript
-import * as ElectronAdapter from 'axios-electron-adapter'
+import ElectronAdapter from 'axios-electron-adapter'
 
 # Replace default adapter on boot
 AxiosStatic.defaults.adapter = ElectronAdapter
