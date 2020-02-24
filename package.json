@@ -1,0 +1,23 @@
+{
+  "name": "axios-electron-adapter",
+  "version": "1.0.0",
+  "description": "The Axios adapter for Electron Network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/poweredormao/axios-electron-adapter"
+  },
+  "keywords": [
+    "axios",
+    "electron"
+  ],
+  "author": "dormao",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^7.1.12",
+    "axios": "^0.19.2"
+  }
+}
