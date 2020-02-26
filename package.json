@@ -1,6 +1,6 @@
 {
   "name": "axios-electron-adapter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Axios adapter for Electron Network",
   "main": "index.js",
   "scripts": {
