@@ -26,3 +26,6 @@ Axios.post('/myworld/signs', EXAMPLE_POST_DATA)
 
 # Warning
 The request made by Electron will not be recorded in Devtools > Network
+
+# Github
+[Explore](github.com/poweredormao/axios-electron-adapter)

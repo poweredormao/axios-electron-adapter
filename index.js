@@ -2,6 +2,7 @@
 import { remote } from 'electron'
 import * as createError from 'axios/lib/core/createError';
 import * as settle from 'axios/lib/core/settle';
+import {StringLTrim, StringRTrim} from "./trims";
 
 /**
  * The Electron Adapter, creates with axios config
@@ -12,11 +13,13 @@ import * as settle from 'axios/lib/core/settle';
  */
 export default function (config) {
     const processFunc = (resolve, reject) => {
-        const baseUrl = config.baseURL? config.baseURL : '';
-        const FullUrl =
-            baseUrl +
-            (baseUrl.endsWith('/')? '' : '/') +
-            (config.url? config.url : '');
+
+        let baseUrl = config.baseURL? config.baseURL : '';
+        let configUrl = config.url ? config.url : '';
+
+        baseUrl = StringRTrim(baseUrl, '/');
+        configUrl = StringLTrim(configUrl, '/');
+        const FullUrl = `${baseUrl}/${configUrl}`;
 
         const clientReq = remote.net.request({
             method: config.method,
